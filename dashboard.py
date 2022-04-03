@@ -92,7 +92,7 @@ def _tab(policy_data):
         """
         # Blank plot with correct labels
         p = figure(plot_width=1500, plot_height=300, title='',
-                   x_axis_label='', y_axis_label='Premium', tools="pan,wheel_zoom,reset")
+                   x_axis_label='', y_axis_label='Premium', tools="pan,wheel_zoom,reset", x_range=(0, 120))
 
         for key, value in policy_dictionary.items():
             p.line(x='left', y=value[0], source=src, color=value[2],
@@ -373,6 +373,7 @@ def _tab(policy_data):
 
     # Create a row layout
     layout = row(controls, column(row(p, u), w, q))
+    layout = row(w, q)
 
     # Make a tab with the layout
     tab = Panel(child=layout, title='Policy Tab')
