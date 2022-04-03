@@ -92,7 +92,7 @@ def _tab(policy_data):
         """
         # Blank plot with correct labels
         p = figure(plot_width=1500, plot_height=300, title='',
-                   x_axis_label='', y_axis_label='Premium', tools="pan,wheel_zoom,reset")
+                   x_axis_label='', y_axis_label='Premium', tools="")
 
         for key, value in policy_dictionary.items():
             p.line(x='left', y=value[0], source=src, color=value[2],
@@ -110,7 +110,7 @@ def _tab(policy_data):
         p.legend.padding = 10
         p.legend.margin = 0
         p.toolbar.active_scroll = p.select_one(WheelZoomTool)
-        p.add_layout(p.legend[0], 'right')
+        # p.add_layout(p.legend[0], 'right')
 
         return p
 
