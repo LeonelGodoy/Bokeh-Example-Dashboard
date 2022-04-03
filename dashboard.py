@@ -74,7 +74,7 @@ def _tab(policy_data):
 
     def make_plot_distribution(src):
         # Blank plot with correct labels
-        p = figure(plot_width=110, plot_height=300, title='',
+        p = figure(plot_width=1500, plot_height=300, title='',
                    x_axis_label='Age Max', y_axis_label='Proportion', tools="")
 
         p.quad(source=src, bottom=0, top='proportion', left='left',
@@ -91,8 +91,8 @@ def _tab(policy_data):
         Creates the graph based on the inputted source
         """
         # Blank plot with correct labels
-        p = figure(plot_width=1100, plot_height=300, title='',
-                   x_axis_label='', y_axis_label='Premium', tools="")
+        p = figure(plot_width=1500, plot_height=300, title='',
+                   x_axis_label='', y_axis_label='Premium', tools="pan,wheel_zoom,reset")
 
         for key, value in policy_dictionary.items():
             p.line(x='left', y=value[0], source=src, color=value[2],
@@ -109,7 +109,7 @@ def _tab(policy_data):
         p.legend.spacing = 1
         p.legend.padding = 10
         p.legend.margin = 0
-        # p.toolbar.active_scroll = p.select_one(WheelZoomTool)
+        p.toolbar.active_scroll = p.select_one(WheelZoomTool)
         p.add_layout(p.legend[0], 'right')
 
         return p
@@ -367,7 +367,7 @@ def _tab(policy_data):
     w = make_plot_premium(src_dist)
     u = make_plot_winrate(src_win)
 
-    # q.x_range = w.x_range
+    q.x_range = w.x_range
     # Put controls in a single element
     controls = column(x_axis, range_select, binwidth_select)
 
