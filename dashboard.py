@@ -373,7 +373,6 @@ def _tab(policy_data):
 
     # Create a row layout
     layout = row(controls, column(row(p, u), w, q))
-    layout = row(w, q)
 
     # Make a tab with the layout
     tab = Panel(child=layout, title='Policy Tab')
