@@ -370,13 +370,13 @@ def _tab(policy_data):
     q.x_range = w.x_range
     # Put controls in a single element
     controls = column(x_axis, range_select, binwidth_select)
+    graphs = column(row(p, u), w, q)
 
     # Create a row layout
-    layout = row(controls, column(row(p, u), w, q))
-    layout = column(row(controls, p, u), w, q)
+    layout = row(controls, graphs)
 
     # Make a tab with the layout
     tab = Panel(child=layout, title='Policy Tab')
 
-    return layout
+    return graphs
 
