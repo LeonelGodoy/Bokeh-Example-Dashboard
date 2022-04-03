@@ -91,7 +91,7 @@ def _tab(policy_data):
         Creates the graph based on the inputted source
         """
         # Blank plot with correct labels
-        p = figure(plot_width=1500, plot_height=300, title='',
+        p = figure(plot_width=1500, plot_height=300, title='Premium by selected X-Axis',
                    x_axis_label='', y_axis_label='Premium', tools="pan,wheel_zoom,reset")
 
         for key, value in policy_dictionary.items():
@@ -334,7 +334,7 @@ def _tab(policy_data):
 
     target_columns = ['Age Max', 'Age Min', 'Credit Score Max', 'Credit Score Min', 'Vehicle Newest', 'Vehicle Oldest']
     # Check box tool
-    x_axis = Select(title="X Axis", options=target_columns, value="Age Max")
+    x_axis = Select(title="X-Axis", options=target_columns, value="Age Max")
     x_axis.on_change('value', update_axis)
 
 #    # Bin slider
