@@ -110,7 +110,7 @@ def _tab(policy_data):
         p.legend.padding = 10
         p.legend.margin = 0
         p.toolbar.active_scroll = p.select_one(WheelZoomTool)
-        # p.add_layout(p.legend[0], 'right')
+        p.add_layout(p.legend[0], 'right')
 
         return p
 
@@ -372,7 +372,7 @@ def _tab(policy_data):
     controls = column(x_axis, range_select, binwidth_select)
 
     # Create a row layout
-    layout = row(controls, column(row(p, u), w, q))
+    layout = row(controls, column(row(p, u), w))
 
     # Make a tab with the layout
     tab = Panel(child=layout, title='Policy Tab')
