@@ -8,6 +8,6 @@ from dashboard import _tab as dashboard_tab
 policy_data = pd.read_csv("data/Auto - Policy Export.csv", low_memory=False)
 # Create each of the tabs
 tab1 = dashboard_tab(policy_data)
-# TABS = Tabs(tabs=[tab1])
+TABS = Tabs(tabs=[tab1])
 # Put the tabs in the current document for display
-curdoc().add_root(tab1)
+curdoc().add_root(TABS)
