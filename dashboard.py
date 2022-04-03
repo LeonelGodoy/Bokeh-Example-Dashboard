@@ -91,7 +91,7 @@ def _tab(policy_data):
         Creates the graph based on the inputted source
         """
         # Blank plot with correct labels
-        p = figure(plot_width=1500, plot_height=300, title='',
+        p = figure(plot_width=1100, plot_height=300, title='',
                    x_axis_label='', y_axis_label='Premium', tools="")
 
         for key, value in policy_dictionary.items():
