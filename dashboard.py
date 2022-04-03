@@ -370,7 +370,7 @@ def _tab(policy_data):
     q.x_range = w.x_range
     # Put controls in a single element
     controls = column(x_axis, range_select, binwidth_select)
-    graphs = column(row(p, u), w, q)
+    graphs = column(w, q, row(p, u))
 
     # Create a row layout
     layout = row(controls, graphs)
