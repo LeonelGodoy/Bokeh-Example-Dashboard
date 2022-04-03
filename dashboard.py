@@ -377,5 +377,5 @@ def _tab(policy_data):
     # Make a tab with the layout
     tab = Panel(child=layout, title='Policy Tab')
 
-    return tab
+    return layout
 
